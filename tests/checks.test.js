@@ -24,10 +24,11 @@ const timeout = ms => new Promise(res => setTimeout(res, ms));
 
 //TESTS
 describe("mooc_node-mod4_file_reflex", function () {
-    
+
     this.timeout(T_TEST * 1000);
-    
-    it('', async function () { this.name = `1: Checking that the file 'mod4_quotes_of_the_day.json' exists...`;
+
+    it('', async function () {
+        this.name = `1: Checking that the file 'mod4_quotes_of_the_day.json' exists...`;
         this.score = 0.34;
         this.msg_ok = `The file 'mod4_quotes_of_the_day.json' has been found`;
         this.msg_err = `The file 'mod4_quotes_of_the_day.json' has not been found`;
@@ -42,7 +43,8 @@ describe("mooc_node-mod4_file_reflex", function () {
         should.not.exist(error_path);
     });
 
-    it('', async function () { this.name = `2: Checking that the file 'mod4_quote_of_the_day.js' exists'...`;
+    it('', async function () {
+        this.name = `2: Checking that the file 'mod4_quote_of_the_day.js' exists'...`;
         this.score = 0.33;
         this.msg_ok = `The file 'mod4_quote_of_the_day.js' has been found`;
         this.msg_err = `The file 'mod4_quote_of_the_day.js' has not been found`;
@@ -53,7 +55,8 @@ describe("mooc_node-mod4_file_reflex", function () {
         should.not.exist(error_path);
     });
 
-    it('', async function () { this.name = `3: Checking that the file 'mod4_file_reflex.js' exists...`;
+    it('', async function () {
+        this.name = `3: Checking that the file 'mod4_file_reflex.js' exists...`;
         this.score = 0.33;
         this.msg_ok = `The file 'mod4_file_reflex.js' has been found`;
         this.msg_err = `The file 'mod4_file_reflex.js' has not been found`;
@@ -64,7 +67,8 @@ describe("mooc_node-mod4_file_reflex", function () {
         should.not.exist(error_path);
     });
 
-    it(`4: Checking that the file 'mod4_quote_of_the_day.js' exports the function 'quote_of_the_day'...`,  async function () {
+    it('', async function () {
+        this.name = `4: Checking that the file 'mod4_quote_of_the_day.js' exports the function 'quote_of_the_day'...`;
         this.score = 3;
         if (error_critical) {
             this.msg_err = error_critical;
@@ -82,7 +86,8 @@ describe("mooc_node-mod4_file_reflex", function () {
         }
     });
 
-    it('', async function () { this.name = `5: Checking that the daily quote is returned...`;
+    it('', async function () {
+        this.name = `5: Checking that the daily quote is returned...`;
         this.score = 3;
         if (error_critical) {
             this.msg_err = error_critical;
@@ -92,7 +97,7 @@ describe("mooc_node-mod4_file_reflex", function () {
             const expected = "Quote 1";
             let output = "";
             let error_std = "";
-            const client = spawn("node", [path.join(path_assignment,"mod4_file_reflex.js")], {cwd: path_assignment});
+            const client = spawn("node", [path.join(path_assignment, "mod4_file_reflex.js")], {cwd: path_assignment});
             client.on('error', function (data) {
                 error_std += data
             });
@@ -116,7 +121,8 @@ describe("mooc_node-mod4_file_reflex", function () {
         }
     });
 
-    it('', async function () { this.name = `6: Checking the response to keypresses...'`;
+    it('', async function () {
+        this.name = `6: Checking the response to keypresses...'`;
         this.score = 3;
         if (error_critical) {
             this.msg_err = error_critical;
@@ -126,7 +132,7 @@ describe("mooc_node-mod4_file_reflex", function () {
             const expected = /\d{3}/;
             let output = "";
             let error_std = "";
-            const client = spawn("node", [path.join(path_assignment,"mod4_file_reflex.js")], {cwd: path_assignment});
+            const client = spawn("node", [path.join(path_assignment, "mod4_file_reflex.js")], {cwd: path_assignment});
             client.on('error', function (data) {
                 error_std += data
             });
