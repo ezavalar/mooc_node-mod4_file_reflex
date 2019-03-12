@@ -36,8 +36,8 @@ describe("mooc_node-mod4_file_reflex", function () {
             error_critical = this.msg_err;
             should.not.exist(error_critical);
         } else {
-            [error_path, _] = await to(fs.move(path.join(path_assignment, 'mod4_quotes_of_the_day.json'), path.join(path_assignment, 'mod4_quotes_of_the_day.original.json')));
-            [error_path, _] = await to(fs.move(path.join(path_assignment, 'tests', 'mod4_quotes_of_the_day.json'), path.join(path_assignment, 'mod4_quotes_of_the_day.json')));
+            [error_path, _] = await to(fs.copy(path.join(path_assignment, 'mod4_quotes_of_the_day.json'), path.join(path_assignment, 'mod4_quotes_of_the_day.original.json'), {"overwrite": true}));
+            [error_path, _] = await to(fs.copy(path.join(path_assignment, 'tests', 'mod4_quotes_of_the_day.json'), path.join(path_assignment, 'mod4_quotes_of_the_day.json'), {"overwrite": true}));
         }
         should.not.exist(error_path);
     });
